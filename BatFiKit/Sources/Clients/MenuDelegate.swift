@@ -15,7 +15,9 @@ public struct MenuDelegate: TestDependencyKey {
         self.observeMenu = observeMenu
     }
 
-    public static var testValue: MenuDelegate = unimplemented()
+    public static var testValue: MenuDelegate = MenuDelegate(
+        observeMenu: unimplemented("observeMenu")
+    )
 }
 
 public extension DependencyValues {

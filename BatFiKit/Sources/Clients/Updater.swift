@@ -28,7 +28,13 @@ public struct Updater: TestDependencyKey {
         self.setAutomaticallyDownloadsUpdates = setAutomaticallyDownloadsUpdates
     }
 
-    public static var testValue: Updater = unimplemented()
+    public static var testValue: Updater = Updater(
+        checkForUpdates: unimplemented("checkForUpdates"),
+        automaticallyChecksForUpdates: unimplemented("automaticallyChecksForUpdates"),
+        automaticallyDownloadsUpdates: unimplemented("automaticallyDownloadsUpdates"),
+        setAutomaticallyChecksForUpdates: unimplemented("setAutomaticallyChecksForUpdates"),
+        setAutomaticallyDownloadsUpdates: unimplemented("setAutomaticallyDownloadsUpdates")
+    )
 }
 
 public extension DependencyValues {

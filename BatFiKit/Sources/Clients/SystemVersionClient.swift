@@ -14,7 +14,9 @@ public struct SystemVersionClient: TestDependencyKey {
         self.currentSystemIsSequoiaOrNewer = currentSystemIsSequoiaOrNewer
     }
 
-    public static var testValue: SystemVersionClient = unimplemented()
+    public static var testValue: SystemVersionClient = SystemVersionClient(
+        currentSystemIsSequoiaOrNewer: unimplemented("currentSystemIsSequoiaOrNewer")
+    )
 }
 
 public extension DependencyValues {

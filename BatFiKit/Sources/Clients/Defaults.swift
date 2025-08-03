@@ -19,7 +19,25 @@ public protocol DefaultsProtocol {
 }
 
 public enum DefaultsKey: TestDependencyKey {
-    public static let testValue: any DefaultsProtocol = unimplemented()
+    public static let testValue: any DefaultsProtocol = MockDefaults()
+}
+
+private struct MockDefaults: DefaultsProtocol {
+    func observe<Value: DefaultsValue>(_ key: Defaults.Key<Value>) -> AsyncStream<Value> {
+        unimplemented("observe", placeholder: AsyncStream.never)
+    }
+    
+    func setValue<Value: Defaults.Serializable>(_ key: Defaults.Key<Value>, value: Value) {
+        unimplemented("setValue")
+    }
+    
+    func value<Value: Defaults.Serializable>(_ key: Defaults.Key<Value>) -> Value {
+        fatalError("Unimplemented test dependency: value")
+    }
+    
+    func resetSettings() {
+        unimplemented("resetSettings")
+    }
 }
 
 public extension DependencyValues {

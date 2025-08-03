@@ -18,7 +18,11 @@ public struct PowerSourceClient: TestDependencyKey {
     public var currentPowerSourceState: () async throws -> PowerState
     public var isRunningOnLaptop: () -> Bool
 
-    public static var testValue: PowerSourceClient = unimplemented()
+    public static var testValue: PowerSourceClient = PowerSourceClient(
+        powerSourceChanges: unimplemented("powerSourceChanges"),
+        currentPowerSourceState: unimplemented("currentPowerSourceState"),
+        isRunningOnLaptop: unimplemented("isRunningOnLaptop")
+    )
 
     public init(
         powerSourceChanges: @escaping () -> AsyncStream<PowerState>,

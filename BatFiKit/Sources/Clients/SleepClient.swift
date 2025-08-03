@@ -34,7 +34,13 @@ public struct SleepClient: TestDependencyKey {
         self.observeMacSleepStatus = observeMacSleepStatus
     }
 
-    public static var testValue: SleepClient = unimplemented()
+    public static var testValue: SleepClient = SleepClient(
+        macWillSleep: unimplemented("macWillSleep"),
+        macDidWake: unimplemented("macDidWake"),
+        screenDidSleep: unimplemented("screenDidSleep"),
+        screenDidWake: unimplemented("screenDidWake"),
+        observeMacSleepStatus: unimplemented("observeMacSleepStatus")
+    )
 }
 
 public extension DependencyValues {

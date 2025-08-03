@@ -27,7 +27,10 @@ public struct PowerModeClient: TestDependencyKey {
         self.setPowerMode = setPowerMode
     }
 
-    public static var testValue: PowerModeClient = unimplemented()
+    public static var testValue: PowerModeClient = PowerModeClient(
+        getCurrentPowerMode: unimplemented("getCurrentPowerMode"),
+        setPowerMode: unimplemented("setPowerMode")
+    )
 }
 
 extension DependencyValues {

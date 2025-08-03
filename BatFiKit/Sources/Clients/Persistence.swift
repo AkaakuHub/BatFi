@@ -33,7 +33,14 @@ public struct Persistence: TestDependencyKey {
         self.fullChargeAndDischargeWasInLast30Days = fullChargeAndDischargeWasInLast30Days
     }
 
-    public static var testValue: Persistence = unimplemented()
+    public static var testValue: Persistence = Persistence(
+        savePowerState: unimplemented("savePowerState"),
+        fetchPowerStatePoint: unimplemented("fetchPowerStatePoint"),
+        observePowerStatePoints: unimplemented("observePowerStatePoints"),
+        fetchLastDischargeDate: unimplemented("fetchLastDischargeDate"),
+        fetchLastFullChargeDate: unimplemented("fetchLastFullChargeDate"),
+        fullChargeAndDischargeWasInLast30Days: unimplemented("fullChargeAndDischargeWasInLast30Days")
+    )
 }
 
 public extension DependencyValues {

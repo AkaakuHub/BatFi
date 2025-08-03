@@ -15,7 +15,9 @@ public struct LaunchAtLogin: TestDependencyKey {
         self.launchAtLogin = launchAtLogin
     }
 
-    public static var testValue: LaunchAtLogin = unimplemented()
+    public static var testValue: LaunchAtLogin = LaunchAtLogin(
+        launchAtLogin: unimplemented("launchAtLogin")
+    )
 }
 
 public extension DependencyValues {

@@ -8,7 +8,7 @@ public struct PowerDistributionClient: TestDependencyKey {
         self.powerInfoChanges = powerInfoChanges
     }
 
-    public static var testValue: PowerDistributionClient = unimplemented()
+    public static var testValue: PowerDistributionClient = PowerDistributionClient(powerInfoChanges: unimplemented("powerInfoChanges"))
 }
 
 public extension DependencyValues {

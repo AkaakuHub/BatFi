@@ -15,7 +15,9 @@ public struct ScreenParametersClient: TestDependencyKey {
         self.screenDidChangeParameters = screenDidChangeParameters
     }
 
-    public static var testValue: ScreenParametersClient = unimplemented()
+    public static var testValue: ScreenParametersClient = ScreenParametersClient(
+        screenDidChangeParameters: unimplemented("screenDidChangeParameters")
+    )
 }
 
 public extension DependencyValues {
