@@ -15,29 +15,20 @@ import UserNotifications
 
 extension Updater: DependencyKey {
     public static let liveValue: Updater = {
-        let updaterDelegate = UpdaterDelegate.instance
-
-        let updaterController = SPUStandardUpdaterController(
-            startingUpdater: true,
-            updaterDelegate: updaterDelegate,
-            userDriverDelegate: updaterDelegate
-        )
-
         let client = Updater(
             checkForUpdates: {
-                updaterController.checkForUpdates(nil)
+                // Updates disabled for privacy
             },
             automaticallyChecksForUpdates: {
-                updaterController.updater.automaticallyChecksForUpdates
+                false
             }, automaticallyDownloadsUpdates: {
-                updaterController.updater.automaticallyDownloadsUpdates
+                false
             },
             setAutomaticallyChecksForUpdates: { check in
-                updaterController.updater.automaticallyChecksForUpdates = check
-
+                // Updates disabled for privacy
             },
             setAutomaticallyDownloadsUpdates: { download in
-                updaterController.updater.automaticallyDownloadsUpdates = download
+                // Updates disabled for privacy
             }
         )
         return client

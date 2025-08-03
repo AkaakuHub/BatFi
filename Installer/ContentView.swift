@@ -37,7 +37,7 @@ struct ContentView: View {
                     BarProgressView(value: appInstaller.installationState.progress)
                     Button(
                         action: {
-                            showingLicense.toggle()
+                            appInstaller.downloadAndInstallApp()
                         },
                         label: {
                             Text(L10n.Installer.Button.Label.install)
