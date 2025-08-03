@@ -1,3 +1,7 @@
+fix build error
+
+---
+
 # BatFi
 BatFi helps you optimize your macOS battery performance by managing charging levels intelligently, yet giving you full control – charging to 100% only when it's needed.
 
